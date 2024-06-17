@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gym Website</title>
+   
+    <style>
+        /* Reset default styles and set body background */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-image: url('bgimg3.avif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Styling for header */
+        header {
+            background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative; /* To position over the background image */
+            z-index: 1; /* Ensure header stays above the background */
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+
+        /* Navigation styles */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            width: 150px;
+        }
+
+        nav ul li ul li a {
+            display: block;
+            padding: 0.5rem;
+        }
+
+        nav ul li ul li a:hover {
+            background: #555;
+        }
+
+        /* Styling for sections */
+        section {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9); /* Light semi-transparent background */
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        }
+        
+        #gallery .gallery-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        #gallery .gallery-images img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow to images */
+            transition: transform 0.3s ease; /* Smooth transition on hover */
+        }
+        
+        #gallery .gallery-images img:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px; /* Limit form width */
+            margin: auto; /* Center align form */
+            background: rgba(255, 255, 255, 0.9); /* Light semi-transparent background */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        }
+        
+        form label {
+            font-weight: bold;
+        }
+        
+        form input, form textarea, form button {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        form button {
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+            border: none; /* Remove border */
+            padding: 0.75rem 1rem; /* Increase padding */
+            transition: background 0.3s ease; /* Smooth transition on hover */
+        }
+        
+        form button:hover {
+            background: #555; /* Darker background on hover */
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1; /* Ensure footer stays above the background */
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Gym</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a>
+                    <ul>
+                        <li><a href="#">Personal Training</a></li>
+                        <li><a href="#">Group Classes</a></li>
+                        <li><a href="#">Nutrition Plans</a></li>
+                        <li><a href="#">Yoga and Pilates</a></li>
+                    </ul>
+                </li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a state-of-the-art gym offering the best equipment and training programs.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Personal Training</li>
+            <li>Group Classes</li>
+            <li>Nutrition Plans</li>
+            <li>Yoga and Pilates</li>
+        </ul>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-images">
+            <img src="gym1.avif" alt="Gym Image 1">
+            <img src="bgimg.avif" alt="Gym Image 1">
+            <img src="gym2.avif" alt="Gym Image 2">
+            <img src="gym3.avif" alt="Gym Image 3">
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Gym. All rights reserved.</p>
+    </footer>
+   <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Form submitted!');
+    });
+    
+   </script>
+</body>
+</html>
